@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: d95rlucf2-python-gitops
+  description: This is GitOps manifest for d95rlucf2-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=d95rlucf2-python
+    backstage.io/kubernetes-id: d95rlucf2-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: d95rlucf2-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:d95rlucf2-python
